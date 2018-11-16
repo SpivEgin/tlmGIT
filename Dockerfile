@@ -2,7 +2,7 @@ FROM debian:stretch-slim
 
 ENV GOGS_VER=0.11.66
 RUN mkdir /opt/tlm/
-ADD https://github.com/gogs/gogs/releases/download/v${{GOGS_VER}}/linux_amd64.zip /opt/tlm/
+ADD https://github.com/gogs/gogs/releases/download/v${GOGS_VER}/linux_amd64.zip /opt/tlm/
 ADD files/usersList.txt /opt/tlm
 ADD bash/main.sh /opt/tlm/
 RUN apt-get -y update && apt-get -y install unzip git &&\
